@@ -2,12 +2,12 @@ import importlib
 
 from flask import Flask, render_template
 
-from stepik_travel.resource.tours import tours
-from stepik_travel.service.departure.filterservice import (
+from resource.tours import tours
+from service.departure.filterservice import (
     FilterService as DepartureFilterService,
 )
-from stepik_travel.utils.util_module import module_to_dict
-from stepik_travel.utils.util_string import lower_byindex
+from utils.util_module import module_to_dict
+from utils.util_string import lower_byindex
 
 app: Flask = Flask(__name__)
 title: dict = module_to_dict(importlib.import_module("stepik_travel.resource.title"))
