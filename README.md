@@ -17,5 +17,6 @@
  Windows
  `pip install -r path-to-service/requirements.txt`
 
-4. Run pre-commit before commiting to repostitory
-  `pre-commit --all-files`
+## Commiting changes
+Run pre-commit before commiting to repostitory
+ `pre-commit --all-files`
