@@ -1,1 +1,1 @@
-web: gunicorn --app stepik-anton-demo-project app:app
+web: gunicorn app:app -a stepik-anton-demo-project
