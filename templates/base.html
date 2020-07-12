@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <title>{{title.title}}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/style.css">
+  {% endblock %}
+</head>
+
+<body>
+    {% if request.path == "/" %}{% set container = "container mt-3" %}{% else %}{% set container = "container" %}{% endif %}
+    <header class={{container}}>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">{{title.title}}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {% for code, direction in title.departures.items() %}
+          {% if code in request.path %}{% set nav = "nav-item active" %}{% else %}{% set nav = "nav-item" %}{% endif %}
+          <li class="{{nav}}">
+            <a class="nav-link" href="/departures/{{code}}">{{direction}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class={{container}}>
+    {% block main %}
+    {%endblock%}
+  </main>
+</body>
+</html>
