@@ -10,7 +10,7 @@ from utils.util_module import module_to_dict
 from utils.util_string import lower_byindex
 
 app: Flask = Flask(__name__)
-title: dict = module_to_dict(importlib.import_module("stepik_travel.resource.title"))
+title: dict = module_to_dict(importlib.import_module("resource.title"))
 
 
 @app.route("/")
