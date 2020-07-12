@@ -17,3 +17,6 @@ Linux
 `pip install -r path-to-service\requirements.txt`
 Windows
 `pip install -r path-to-service/requirements.txt`
+
+4. Run pre-commit before making
+`pre-commit --all-files`
