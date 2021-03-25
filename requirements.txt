@@ -43,7 +43,7 @@ pylint==2.5.2
 pyparsing==2.4.7
 pytest==5.4.1
 pytest-cov==2.8.1
-PyYAML==5.3.1
+PyYAML==5.4
 regex==2020.6.8
 seed-isort-config==2.1.1
 six==1.15.0
